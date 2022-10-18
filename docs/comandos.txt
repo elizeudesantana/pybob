@@ -1,0 +1,341 @@
+# Elizeu de Santana [2022 out 15]
+# EliSoftWare®
+https://blog.pronus.io/posts/python/como-comecar-um-projeto-python-perfeito/
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2RyMzRpU01YUW5ZMGlLUDJYZEJCaERZU3ZZd3xBQ3Jtc0ttdjFEbk5YalFSUFF6QzBkUVdCNnhHOGVxNE5JTWx4TnJsQlhQeGUzMkYtTTJUSklpNTFQM0RnNVFrMDVwb2xZV3d6dzY5SWxoMVQ5RWZDY3lnWl9EaXA2MjVuS2pwVFgyLXFiZU5YaWRweVU0WERjQQ&q=https%3A%2F%2Fblog.pronus.io%2Fposts%2Fpython%2Fcomo-comecar-um-projeto-python-perfeito%2F&v=O3bs4JtHrow
+
+## Documentação do projeto:
+Programas que utlizados para controle no desenvolvimento.
+
+#Instalação do pyenv:
+----------------------------------------------------------------------------------
+Utilizado para o versionamento do python.
+
+-> curl https://pyenv.run | bash
+
+Para que o pyenv funcione corretamente, é necessário adicionar as linhas a seguir 
+no seu arquivo de configuração do shell. Para Bash, este arquivo é ~/.bashrc:
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+Em seguida é necessário iniciar uma nova sessão do terminal ou executar 
+
+-> exec $SHELL 
+para reiniciar a sessão corrente.
+
+->which pyenv
+verifica o diretorio de instalação
+
+->echo $PATH | grep --color=auto "$(pyenv root)/shims"
+verifica se esta no $PATH
+
+->pyenv install --list
+lista todas as versões disponiveis para Instalação
+
+
+->sudo apt-get update; sudo apt-get install make build-essential libssl-dev 
+    zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm 
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev 
+    liblzma-dev
+dependencias usadas para copilação do python pelo pyenv.
+
+instalação do python
+->pyenv install 3.10.8
+
+
+#Instlação do Poetry
+----------------------------------------------------------------------------------
+utilizado para versionamento das dependencias
+
+->curl -sSL https://install.python-poetry.org | python3 -
+instalação do aplicativo.
+
+No Linux, a instalação é feita no diretório $HOME/.local/bin. 
+Se este diretório não está no seu PATH, então é necessário adicioná-lo 
+manualmente no seu arquivo de configuração do shell (~/.bashrc ou ~/.profile) 
+com as seguintes linhas:
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+# a configuração do pyenv entra aqui
+
+Essas linhas de configuração devem ficar antes das linhas de configuração 
+do pyenv, de modo que o resultado final seja 
+
+PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH".
+
+->poetry --version
+Para testar a instalação.
+
+A configuração do poetry é mantida no arquivo $HOME/.config/pypoetry/config.toml. 
+Mas ao invés de acessar este arquivo diretamente, você deve usar o comando 
+poetry config e seus subcomandos.
+
+-> poetry config --list
+Para listar as configurações.
+
+-> poetry config virtualenvs.in-project true
+para o intellicenc do vscode.
+
+-> poetry
+lista todos os comandos disponiveis.
+
+-> poetry new projeto-x --name app
+cria umnovo projeto. --name e opcional para mudar o nome do primeiro diretorio.
+poetry shell
+poetry show --tree
+--------------------------------------------------------------------------------
+
+pFerramentas de Linting e Teste
+O conjunto mínimo recomendado de ferramentas de teste é:
+
+pytest: ferramenta de teste para Python
+pytest-cov: plugin do pytest para medir cobertura de código
+Para linting, recomendo o uso de:
+
+blue: formatador de código baseado no black
+flake8: ferramenta de análise estática de código Python
+flake8-debugger: plugin do flake8 para verificar comandos de depuração esquecidos no código
+flake8-pytest-style: plugin do flake8 para verificar padrões de estilo de testes do pytest.
+isort: ferramenta para ordenar imports do Python
+mypy: ferramenta de análise estática de tipos
+pep8-naming: plugin para flake8 que verifica convenção de nomes conforme PEP-8
+pyupgrade: ferramenta para atualizar sintaxe para versões mais novas do Python
+E algumas ferramentas adicionais específicas para segurança:
+
+bandit: ferramenta para encontrar falhas comuns de segurança no código Python
+pip-audit: ferramenta para escanear ambientes Python em busca de pacotes com vulnerabilidade conhecida
+Instalação e Configuração
+Todas as bibliotecas e ferramentas relacionadas a atividades de teste e linting são necessárias para o desenvolvimento do projeto, mas não para seu funcionamento em produção. Devem ser instaladas em uma seção separada em pyproject.toml para não se misturar com as dependências essenciais. A instalação dessas bibliotecas e ferramentas deve ser feita através do comando poetry add --dev:
+
+$ poetry add --dev pytest=="*" pytest-cov=="*" \
+                blue=="*" flake8=="*" flake8-debugger=="*" \
+                flake8-pytest-style=="*" isort=="*" mypy=="*" \
+                pep8-naming=="*" pyupgrade=="*" \
+                bandit=="*" pip-audit=="*"
+
+Configuração
+A configuração da maioria das dependências pode ser mantida no arquivo pyproject.toml, em seções nomeadas seguindo o padrão [tool.<nome-da-ferramenta>]:
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.blue]
+line-length = 100
+
+[tool.pytest.ini_options]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+Algumas observações:
+
+PEP8 estabelece um guia de estilo para código Python mas deixa espaço para algumas variações de formatação. Ao estabelecer profile = "black" na linha 2, a formatação do isort é ajustada para ficar mais compatível com a produzida pelo black/blue.
+Linhas 3 e 6 alteram o tamanho da linha do valor padrão 79 para 100.
+mypy possui diversas opções de configuração. A opção ignore_missing_imports suprime mensagens de erro sobre importações que não podem ser resolvidas (linha 12). A opção disallow_untyped_defs não permite a definição de funções sem anotações de tipo ou com anotações de tipo incompletas (linha 13).
+Ao contrário das demais ferramentas adotadas, flake8 não pode ser configurado
+ no pyproject.toml. Vamos usar um arquivo de nome .flake8 então:
+
+[flake8]
+max_line_length = 100
+exclude = .venv,.mypy_cache,.pytest_cache
+ignore = PT013,PT018,W503
+
+
+Automação
+Testes e linting devem ser fáceis de serem executados, sem a necessidade de 
+lembrar cada comando e seus argumentos. Para isso, eu recomendo usar um 
+Makefile com as tarefas necessárias:
+
+test:
+    pytest --cov-report term-missing --cov-report html --cov-branch \
+           --cov projeto_x/
+
+lint:
+    @echo
+    isort --diff -c .
+    @echo
+    blue --check --diff --color .
+    @echo
+    flake8 .
+    @echo
+    mypy .
+    @echo
+    bandit -r projeto_x/
+    @echo
+    pip-audit
+
+format:
+    isort .
+    blue .
+    pyupgrade --py310-plus **/*.py
+E aí, é só usar o comando make para executar as tarefas:
+
+make test executa os testes e gera relatórios de cobertura dos testes.
+make lint executa o linting usando diversas ferramentas em sequência.
+make format formata o código Python de acordo com os padrões usados por isort, 
+blue e pyupgrade.
+Podemos usar esses mesmos comandos nos scritps de hook do controle de versão 
+e na configuração do sistema de integração contínua. Dessa forma, mantemos 
+um único arquivo com os comandos e os demais usando esse arquivo.
+
+
+Configuração do Sistema de Integração Contínua
+A maioria dos sistemas de integração contínua modernos mantém sua configuração 
+junto com o código-fonte. GitHub Actions, por exemplo, mantém sua configuração
+ em arquivos no formato yaml dentro do diretório .github/workflows, na raiz do
+  projeto.
+
+Crie o arquivo 
+.github/workflows/continuous_integration.yml com o seguinte conteúdo:
+
+name: Continuous Integration
+on: [push]
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    steps:
+
+        - name: Set up python
+          uses: actions/setup-python@v3
+          with:
+              python-version: '3.10'
+
+        - name: Check out repository
+          uses: actions/checkout@v2
+
+        - name: Install Poetry
+          uses: snok/install-poetry@v1
+          with:
+              virtualenvs-in-project: true
+
+        - name: Load cached venv
+          id: cached-poetry-dependencies
+          uses: actions/cache@v2
+          with:
+              path: .venv
+              key: venv-${{ hashFiles('**/poetry.lock') }}
+
+        - name: Install dependencies
+          if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+          run: poetry install --no-interaction
+
+        - name: Lint
+          run: poetry run make lint
+
+        - name: Run tests
+          run: poetry run make test
+
+Essa configuração funciona da seguinte forma:
+
+Esse fluxo será executado toda vez que o repositório receber um push (linha 2).
+O fluxo será executado em um sistema operacional Ubuntu, na última versão
+ disponível (linha 5).
+Use a versão 3.10 do Python (linha 11).
+Em seguida, instale poetry (linha 16) e configure-o para usar ambientes virtuais 
+em diretórios .venv (linha 19).
+Para evitar ter de reinstalar as mesmas dependências toda vez, vamos criar uma
+ política de cache para o diretório .venv (linha 25). A chave que identifica o
+  cache é formado pela combinação da palavra venv e o hash do conteúdo de 
+poetry.lock (linha 26).
+As dependências são instaladas apenas se o cache não for encontrado
+(linhas 28 a 30). Caso contrário, o cache de venv é usado.
+Executar a tarefa de lint (linha 33)
+Executar a tarefa de teste (linha 35)
+
+
+Eventos de pre-commit e pre-push
+É uma boa prática fazer a verificação da qualidade do código localmente mesmo 
+que a integração contínua refaça o processo no servidor. Economiza tempo porque 
+o resultado é imediato e as correções podem ser feitas sem ter de passar por um 
+ciclo de integração contínua.
+
+Essa verificação local será automatizada através de hooks do controle de versão 
+para disparar ações de acordo com algum evento. Vamos precisar de dois eventos:
+
+pre-commit executará make lint
+pre-push executará make test
+Em ambos os casos, se alguma falha for encontrada, a operação do controle de 
+versão é cancelada.
+
+Outras combinações possíveis seriam make lint e make test no pre-commit ou no 
+pre-push. Não há problema em qualquer uma delas desde que linting e testes sejam 
+executados antes de compartilhar as revisões. Eu prefiro dividir as verificações 
+duas partes, porque você tem a opção de consolidar uma revisão intermediária que 
+ainda não passa nos testes dessa forma.
+Para facilitar a vida do desenvolvedor, vamos adicionar a tarefa install_hooks 
+ao Makefile, que chama o script scripts/install_hooks.sh para criar os hooks:
+
+install_hooks:
+    scripts/install_hooks.sh
+
+Makefile possui certas limitações de sintaxe que dificultam a escrita de 
+tarefas mais complexas. Para esses casos, o melhor é chamar um script 
+separado, que pode escrito em uma linguagem mais adequada.
+
+O script install_hooks.sh localizado no subdiretório scripts:
+
+#!/usr/bin/env bash
+
+GIT_PRE_COMMIT='#!/bin/bash
+cd $(git rev-parse --show-toplevel)
+poetry run make lint
+'
+
+GIT_PRE_PUSH='#!/bin/bash
+cd $(git rev-parse --show-toplevel)
+poetry run make test
+'
+
+HG_HOOKS='[hooks]
+precommit.lint = (cd `hg root`; poetry run make lint)
+pre-push.test = (cd `hg root`; poetry run make test)
+'
+
+if [ -d '.git' ]; then
+    echo "$GIT_PRE_COMMIT" > .git/hooks/pre-commit
+    echo "$GIT_PRE_PUSH" > .git/hooks/pre-push
+    chmod +x .git/hooks/pre-*
+elif ! grep -s -q 'precommit.lint' '.hg/hgrc'; then
+    echo "$HG_HOOKS" >> .hg/hgrc
+fi
+
+Algumas explicações:
+
+No Git, hooks são arquivos executáveis nomeados de acordo com o evento desejado, 
+localizados em .git/hooks.
+No Mercurial, hooks são definidos na seção [hooks] no arquivo de configuração 
+.hg/hgrc, em que cada hook pode ser comandos ou funções Python.
+Tanto os scripts em bash (linhas 3-6, 8-11) quanto os comandos usados no
+ Mercurial (linhas 13-16) fazem a mesma coisa: mudam o diretório corrente para
+  a raiz do projeto, onde está localizado Makefile, e executa o comando poetry 
+  run make <tarefa>. Lembre-se que poetry run <comando> executa o comando
+   dentro do contexto do ambiente virtual do projeto.
+Se existir um diretório .git, então os hooks do Git são criados no diretório 
+.git/hooks (linhas 18-21). Caso contrário, os hooks do Mercurial são criados no 
+diretório .hg/hgrc (linhas 22-23).
+O trecho de código apresentado atende tanto quem usa Mercurial (meu caso) 
+quanto quem usa Git. Você pode retirar algumas partes se você e sua equipe 
+usam apenas um ou outro.
+
+
+Preparando o Controle de Versão
+
+Para quem usa Git, execute:
+
+$ git init .
+$ poetry run make install_hooks
+$ git add -A .
+$ git commit -m 'Estrutura inicial do projeto'
+
+
+
+--------------------------------------------------------------------------------
+poetry add --dev prospector 
+
+prospector
+prospector --with-tool pep 257

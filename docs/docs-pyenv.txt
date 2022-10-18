@@ -1,0 +1,54 @@
+# Elizeu de Santana [2022 out 15]
+# EliSoftWare®
+
+
+https://blog.pronus.io/posts/python/como-comecar-um-projeto-python-perfeito/
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2RyMzRpU01YUW5ZMGlLUDJYZEJCaERZU3ZZd3xBQ3Jtc0ttdjFEbk5YalFSUFF6QzBkUVdCNnhHOGVxNE5JTWx4TnJsQlhQeGUzMkYtTTJUSklpNTFQM0RnNVFrMDVwb2xZV3d6dzY5SWxoMVQ5RWZDY3lnWl9EaXA2MjVuS2pwVFgyLXFiZU5YaWRweVU0WERjQQ&q=https%3A%2F%2Fblog.pronus.io%2Fposts%2Fpython%2Fcomo-comecar-um-projeto-python-perfeito%2F&v=O3bs4JtHrow
+
+
+## Documentação do projeto:
+Programas que utlizados para controle no desenvolvimento.
+
+#Instalação do pyenv:
+----------------------------------------------------------------------------------
+Utilizado para o versionamento do python.
+
+-> curl https://pyenv.run | bash
+
+Para que o pyenv funcione corretamente, é necessário adicionar as linhas a seguir 
+no seu arquivo de configuração do shell. Para Bash, este arquivo é ~/.bashrc:
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+Em seguida é necessário iniciar uma nova sessão do terminal ou executar 
+
+-> exec $SHELL 
+para reiniciar a sessão corrente.
+
+->which pyenv
+verifica o diretorio de instalação
+
+->echo $PATH | grep --color=auto "$(pyenv root)/shims"
+verifica se esta no $PATH
+
+->pyenv install --list
+lista todas as versões disponiveis para Instalação
+
+
+->sudo apt-get update; sudo apt-get install make build-essential libssl-dev 
+    zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm 
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev 
+    liblzma-dev
+dependencias usadas para copilação do python pelo pyenv.
+
+-> pyenv install 3.10.8
+instalação do python
+
+-> pyenv global anaconda
+
+-> pyenv local 3.10.8
+
+
+

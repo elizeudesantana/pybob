@@ -1,0 +1,38 @@
+# Elizeu de Santana [2022 out 15]
+# EliSoftWare®
+
+autorização token para o github completa com todas os itens.
+-> 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
+eJwtzLEKwjAUheF3ydyhtkKbjAo6KCgq6BZukmsNTZtw01pFfHeDdDsc+P4PA60xxotvsWeCccMxrxamLmuAouI5FmppsC6hWJQIoExZ6XuuWcYC+ac1SDP9zCU5zKnm4eVqr8wRzie+mfavCGvVLVXPi+t1e9jxW/6cQtWk1J/I4R0wOYVASOmN2v8PMJ3tRRiVs1q2+M4IwQhPTRrBZ2NEEtiBddnkqb07PyWMr2AJo4SBiX507vv9AcZ+ULY=
+
+-> entrar no git criar um repodsitorio, copiar o clone https
+-> git clone https://github.com/elizeudesantana/bobpy.git
+
+-> entrar no diretorio clonado, colar os arquivos e 
+-> git init
+
+-> git add $arquivos
+adiciona arquivo
+
+-> git add * (todos os arquivos)
+
+-> git status
+
+-> git commit -m "aqui as obs do projeto"
+
+-> git push -u origin master
+
+-> git config --global credential.helper cache
+para salvar as configurações em cache
+
+-> git config --global --unset credential.helper
+para retirar do cache as configurações
+
+-> git remote add pybob https://github.com/elizeudesantana/pybob.git 
+adiciona um repositorio remoto 
+
+-> git fetch pybob
+busca no remoto todas as informaçãoes que faltam no repositorio master
+
+-> git remote -v 
+mostra todos os repositorios que esta trabalhando

@@ -1,0 +1,83 @@
+# Elizeu de Santana [2022 out 15]
+# EliSoftWare®
+
+
+https://blog.pronus.io/posts/python/como-comecar-um-projeto-python-perfeito/
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2RyMzRpU01YUW5ZMGlLUDJYZEJCaERZU3ZZd3xBQ3Jtc0ttdjFEbk5YalFSUFF6QzBkUVdCNnhHOGVxNE5JTWx4TnJsQlhQeGUzMkYtTTJUSklpNTFQM0RnNVFrMDVwb2xZV3d6dzY5SWxoMVQ5RWZDY3lnWl9EaXA2MjVuS2pwVFgyLXFiZU5YaWRweVU0WERjQQ&q=https%3A%2F%2Fblog.pronus.io%2Fposts%2Fpython%2Fcomo-comecar-um-projeto-python-perfeito%2F&v=O3bs4JtHrow
+
+
+##Instlação do Poetry
+----------------------------------------------------------------------------------
+utilizado para versionamento das dependencias
+
+->curl -sSL https://install.python-poetry.org | python3 -
+instalação do aplicativo.
+
+No Linux, a instalação é feita no diretório $HOME/.local/bin. 
+Se este diretório não está no seu PATH, então é necessário adicioná-lo 
+manualmente no seu arquivo de configuração do shell (~/.bashrc ou ~/.profile) 
+com as seguintes linhas:
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+# a configuração do pyenv entra aqui
+
+Essas linhas de configuração devem ficar antes das linhas de configuração 
+do pyenv, de modo que o resultado final seja 
+
+PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH".
+
+-> poetry --version
+Para testar a instalação.
+
+A configuração do poetry é mantida no arquivo $HOME/.config/pypoetry/config.toml. 
+Mas ao invés de acessar este arquivo diretamente, você deve usar o comando 
+poetry config e seus subcomandos.
+
+-> poetry config --list
+Para listar as configurações.
+
+-> poetry config virtualenvs.in-project true
+para o intellicenc do vscode.
+
+-> poetry
+lista todos os comandos disponiveis.
+
+-> poetry new projeto-x --name app
+cria umnovo projeto. --name e opcional para mudar o nome do primeiro diretorio.
+
+-> poetry shell
+
+-> poetry show --tree
+mostra o que foi adicionados.
+
+-> poetry init -n
+inicia o poetry sem criar os diretorios.
+cria o arquivos pyptojct.toml na raiz.
+
+-> poetry install
+cria o virtualenvs.
+.venv , poetry.lock 
+
+-> poetry add --group dev pytest
+para test de desenpenho e verificar funcionamento do codigo.
+
+-> poetry add --group dev blue
+arruma os codigos segundo as peps.  uso [blue .]
+
+-> poetry add --group dev isort
+organiza os imports. uso [isort . --check, mostra os erros e isort . corrige]
+
+-> poetry add --group dev mypy
+
+-> poetry add --group dev mkdocs 
+[uso -> mkdocs new . 
+para teste 
+-> mkdocs serve]
+
+-> poetry add --group dev prospector
+uso prospector
+
+-> poetry add --group dev pip-audit
+uso pip-audit
