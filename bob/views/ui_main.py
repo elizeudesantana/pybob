@@ -25,10 +25,10 @@ from PySide6.QtGui import QIcon, QAction
 from PySide6.QtCore import Slot
 
 
-from bob.lib.menu.menu_main import MenuMain
-from bob.lib.modelo_clima import Clima
-from bob.lib.modelo_radio import Radio
-from bob.lib.toolbarinit import InitToolbar
+from bob.module.menu.menu_main import MenuMain
+from bob.module.modelo_clima import Clima
+from bob.module.modelo_radio import Radio
+from bob.module.toolbarinit import InitToolbar
 import sys
 import os
 
@@ -166,12 +166,14 @@ class UiMain(QMainWindow):
         Requerimentos para instalacao:
 
         sudo apt install libcurses-perl
-        wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.6.tar.gz
+        wget http://search.cpan.org/CPAN/authors/id/K/KB/\
+            KBAUCOM/Term-Animation-2.6.tar.gz
         tar -zxvf Term-Animation-2.6.tar.gz
         cd Term-Animation-2.6
         perl Makefile.PL &&  make &&   make test
         sudo make install
-        wget --no-check-certificate http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz
+        wget --no-check-certificate http://www.robobunny.com/\
+            projects/asciiquarium/asciiquarium.tar.gz
         tar -zxvf asciiquarium.tar.gz
         cd asciiquarium_1.1
         sudo cp asciiquarium /usr/local/bin/
