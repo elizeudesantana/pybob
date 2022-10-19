@@ -60,7 +60,7 @@ cria o arquivos pyptojct.toml na raiz.
 cria o virtualenvs.
 
 -> poetry install
-.venv , poetry.lock 
+.venv , poetry.lock, instala dependencia listadas em toml
 
 -> poetry add --group dev pytest
 para test de desenpenho e verificar funcionamento do codigo.
