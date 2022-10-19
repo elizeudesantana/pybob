@@ -20,7 +20,7 @@ History:
                 em : 19/10/2022
                 Tentativa de solucionar o bug da GUI, utilizando pyenv instalado
                 a versao python 3.9.12 criar uma nova virtualenv, e instalar o
-                pyside6.0.0
+                pyside6.2.0 e shibloken6.2.0
 
 Extern Dependency :
                 pyside2
