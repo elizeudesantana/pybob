@@ -4,10 +4,12 @@ version="2022.01"
 scriptFileVersion="0.1.0"
 
 History:
-    2022.01     Script .
+    2022.01     Script Inicial.
+    2022.02     em : 19/10/2022
+                Trocado pyside6 para pyside2 - Qt
 
 Extern Dependency :
-                pyside6
+                pyside2
 
 Intern Dependency:
                 mainwindow
@@ -20,9 +22,9 @@ Description:
 
 by: Elizeu de Santana  In: 17/10/2022
 """
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QPlainTextEdit
-from PySide6.QtGui import QIcon, QAction
-from PySide6.QtCore import Slot
+from PySide2.QtWidgets import QMainWindow, QMessageBox, QPlainTextEdit
+from PySide2.QtGui import QIcon, QAction
+from PySide2.QtCore import Slot
 
 
 from bob.module.menu.menu_main import MenuMain
