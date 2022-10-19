@@ -56,8 +56,10 @@ mostra o que foi adicionados.
 inicia o poetry sem criar os diretorios.
 cria o arquivos pyptojct.toml na raiz.
 
--> poetry install
+-> poetry env use 3.9.12 
 cria o virtualenvs.
+
+-> poetry install
 .venv , poetry.lock 
 
 -> poetry add --group dev pytest
