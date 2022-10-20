@@ -15,22 +15,19 @@ Intern Dependency:
                 mainwindow
                 modelo_clima
                 modelo_radio
-                toolbarinit
+                ui_settings
 
 Description:
     Aplicação  unidae de interface.
 
 by: Elizeu de Santana  In: 17/10/2022
 """
-from PySide2.QtWidgets import QMainWindow, QMessageBox, QPlainTextEdit
-from PySide2.QtGui import QIcon, QAction
+from PySide2.QtWidgets import QMainWindow, QMessageBox, QPlainTextEdit, QAction
+from PySide2.QtGui import QIcon
 from PySide2.QtCore import Slot
 
-
-from bob.module.menu.menu_main import MenuMain
-from bob.module.modelo_clima import Clima
-from bob.module.modelo_radio import Radio
-from bob.module.toolbarinit import InitToolbar
+# from .ui_model.modelo_radio import Radio
+from .ui_settings import SettingsMain
 import sys
 import os
 
@@ -41,34 +38,7 @@ CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 class UiMain(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self, parent)
-        self.settings()
-        MenuMain.monta_menu(self)
-
-    def settings(self):
-        # maximiza a ui
-        self.showMaximized()
-
-        # carrega image para o background
-        # mg = os.path.join(CURRENT_DIR, "imagem/bg2.jpg")
-        # self.setCentralWidget(StackedWidget())
-
-        self.setWindowTitle('PyBob - EliSoftWare®')
-        InitToolbar.inittoolbar(self)
-
-        # Clima.atualiza(self)
-
-        self.status = self.statusBar()
-        self.status.showMessage('Seja bem vindo - PyBob - EliSoftWare®')
-
-    def togglebar(self):
-        state = self.formatbar.isVisible()
-        # Set the visibility to its inverse
-        self.formatbar.setVisible(not state)
-
-    def toggleformatbar(self):
-        state = self.formatbar.isVisible()
-        # Set the visibility to its inverse
-        self.formatbar.setVisible(not state)
+        SettingsMain.settings(self)
 
     # Qaction do Menu Principal.
     @Slot()
@@ -89,8 +59,8 @@ class UiMain(QMainWindow):
         self.toolbar.addAction(self.terAction)
 
         # trabalho o edit e os dados.
-        plainText = QPlainTextEdit()
-        plainText.setStyleSheet(
+        plaintext = QPlainTextEdit()
+        plaintext.setStyleSheet(
             """QPlainTextEdit {background-color: #333;
             color: #00FF00;
             font-family: Courier;}"""
@@ -100,11 +70,11 @@ class UiMain(QMainWindow):
         # text = str(os.popen('cat /var/log/apache2.log').read())
         text = str(os.popen('cat /var/log/syslog').read())
 
-        self.setCentralWidget(plainText)
-        plainText.textChanged.connect(
-            lambda: plainText.document().toPlainText()
-        )
-        plainText.document().setPlainText(text)
+        self.setCentralWidget(plaintext)
+        t = plaintext.document().toPlainText()
+        plaintext.insertPlainText(text)  # textChanged.connect(t)
+        # plainText.document().setPlainText(text)
+        # .appendPlainText(text)
 
         # informo no status bar
         self.status.showMessage('Lendo logs do sistema de arquivo.')
@@ -124,7 +94,8 @@ class UiMain(QMainWindow):
 
     @Slot()
     def menu_radio(self, checked):
-        Radio.liga_radio(self)
+        # Radio.liga_radio(self)
+        ...
 
     @Slot()
     def menu_arquivo(self, checked):

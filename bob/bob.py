@@ -28,8 +28,8 @@ History:
 
                 Traceback (most recent call last):
                 File "<string>", line 1, in <module>
-                ImportError: /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2: 
-                symbol krb5_ser_context_init version krb5_3_MIT not defined 
+                ImportError: /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2:
+                symbol krb5_ser_context_init version krb5_3_MIT not defined
                 in file libkrb5.so.3 with link time reference
 
                 solucao:
@@ -64,7 +64,7 @@ Description:
 by: Elizeu de Santana  In: 17/10/2022
 """
 from PySide2.QtWidgets import QApplication
-from bob.views.ui_main import UiMain
+from views.ui_main import UiMain
 import sys
 
 
