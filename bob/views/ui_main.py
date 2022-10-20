@@ -65,13 +65,12 @@ class UiMain(QMainWindow):
             color: #00FF00;
             font-family: Courier;}"""
         )
-        # text-decoration: underline;
         # text = str(os.popen('cat /var/log/dpkg.log').read())
         # text = str(os.popen('cat /var/log/apache2.log').read())
         text = str(os.popen('cat /var/log/syslog').read())
 
         self.setCentralWidget(plaintext)
-        t = plaintext.document().toPlainText()
+        # t = plaintext.document().toPlainText()
         plaintext.insertPlainText(text)  # textChanged.connect(t)
         # plainText.document().setPlainText(text)
         # .appendPlainText(text)
