@@ -8,6 +8,9 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.9.12,<3.11"
 pyside2 = "^5.15.2.1"
+pyqt5 = "^5.15.7"
+rocketry = "^2.4.1"
+pysqlite3 = "^0.4.7"
 
 
 [tool.poetry.group.dev.dependencies]

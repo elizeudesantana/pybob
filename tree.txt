@@ -1,0 +1,221 @@
+.
+├── bob
+│   ├── bob.py
+│   ├── imagem
+│   │   ├── 46622263-8a682e00-cb47-11e8-8ffe-3709cdb39515.png
+│   │   ├── 46622264-8b00c480-cb47-11e8-9ff5-cd7eb1e646cf.png
+│   │   ├── ascendant-line-chart-of-business_icon-icons.com_56868.png
+│   │   ├── bg1.png
+│   │   ├── bg.png
+│   │   ├── calendar-with-a-clock-time-tools_icon-icons.com_56831.png
+│   │   ├── delete_4219.png
+│   │   ├── home_house_3526.png
+│   │   ├── icons8-barra-de-navegação-superior-80.png
+│   │   ├── icons8-clima-ventoso-100.png
+│   │   ├── radio.jpg
+│   │   ├── savetheapplication_guardar_2958.png
+│   │   └── wifi_3207.png
+│   ├── __pycache__
+│   │   ├── bob.cpython-39.pyc
+│   │   └── distancia.cpython-310.pyc
+│   └── views
+│       ├── bg2.jpg
+│       ├── database.db
+│       ├── __pycache__
+│       │   ├── mainwindow.cpython-310.pyc
+│       │   ├── ui_main.cpython-310.pyc
+│       │   ├── ui_main.cpython-39.pyc
+│       │   ├── ui_principal.cpython-310.pyc
+│       │   └── ui_settings.cpython-39.pyc
+│       ├── static
+│       │   ├── checklist.png
+│       │   ├── chip.png
+│       │   ├── coding.png
+│       │   ├── computer.png
+│       │   ├── data.png
+│       │   ├── laptop.png
+│       │   ├── software.png
+│       │   ├── web.png
+│       │   ├── website.png
+│       │   └── work.png
+│       ├── t.py
+│       ├── ui_main.py
+│       ├── ui_model
+│       │   ├── asciiquarium
+│       │   ├── distancia.py
+│       │   ├── doc
+│       │   │   └── clima.txt
+│       │   ├── mandir.py
+│       │   ├── menu
+│       │   │   ├── contatos
+│       │   │   │   ├── madicionar.py
+│       │   │   │   ├── mbuscar.py
+│       │   │   │   ├── mcriarbd.py
+│       │   │   │   ├── mdeletar.py
+│       │   │   │   ├── mdeletartodos.py
+│       │   │   │   ├── meditar.py
+│       │   │   │   ├── menu_contatos.py
+│       │   │   │   ├── mlistar.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── madicionar.cpython-39.pyc
+│       │   │   │       ├── mbuscar.cpython-39.pyc
+│       │   │   │       ├── mcriarbd.cpython-39.pyc
+│       │   │   │       ├── mdeletar.cpython-39.pyc
+│       │   │   │       ├── mdeletartodos.cpython-39.pyc
+│       │   │   │       ├── meditar.cpython-39.pyc
+│       │   │   │       ├── menu_contatos.cpython-39.pyc
+│       │   │   │       └── mlistar.cpython-39.pyc
+│       │   │   ├── financeiro
+│       │   │   │   ├── mcripto.py
+│       │   │   │   ├── menu_financas.py
+│       │   │   │   ├── mtermos.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── mcripto.cpython-39.pyc
+│       │   │   │       ├── menu_financas.cpython-39.pyc
+│       │   │   │       └── mtermos.cpython-39.pyc
+│       │   │   ├── instalacao
+│       │   │   │   ├── mdiversos.py
+│       │   │   │   ├── menu_instalacao.py
+│       │   │   │   ├── merros.py
+│       │   │   │   ├── mfontes.py
+│       │   │   │   ├── mgdriver.py
+│       │   │   │   ├── mlamp.py
+│       │   │   │   ├── monedriver.py
+│       │   │   │   ├── mpkg.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── mdiversos.cpython-39.pyc
+│       │   │   │       ├── menu_instalacao.cpython-39.pyc
+│       │   │   │       ├── merros.cpython-39.pyc
+│       │   │   │       ├── mfontes.cpython-39.pyc
+│       │   │   │       ├── mgdriver.cpython-39.pyc
+│       │   │   │       ├── mlamp.cpython-39.pyc
+│       │   │   │       ├── monedriver.cpython-39.pyc
+│       │   │   │       └── mpkg.cpython-39.pyc
+│       │   │   ├── lembretes
+│       │   │   │   ├── madicionar.py
+│       │   │   │   ├── mbuscar.py
+│       │   │   │   ├── mcriarbd.py
+│       │   │   │   ├── mdeletar.py
+│       │   │   │   ├── mdeletartodos.py
+│       │   │   │   ├── meditar.py
+│       │   │   │   ├── menu_lembrete.py
+│       │   │   │   ├── mlistar.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── madicionar.cpython-39.pyc
+│       │   │   │       ├── mbuscar.cpython-39.pyc
+│       │   │   │       ├── mcriarbd.cpython-39.pyc
+│       │   │   │       ├── mdeletar.cpython-39.pyc
+│       │   │   │       ├── mdeletartodos.cpython-39.pyc
+│       │   │   │       ├── meditar.cpython-39.pyc
+│       │   │   │       ├── menu_lembrete.cpython-39.pyc
+│       │   │   │       └── mlistar.cpython-39.pyc
+│       │   │   ├── manutecao
+│       │   │   │   ├── meddisco.py
+│       │   │   │   ├── menu_manutencao.py
+│       │   │   │   ├── mgrafcpu.py
+│       │   │   │   ├── mmemoreal.py
+│       │   │   │   ├── mmonitorix.py
+│       │   │   │   ├── mmonitrede.py
+│       │   │   │   ├── mmonitso.py
+│       │   │   │   ├── mtestegraf.py
+│       │   │   │   ├── mteststress.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── meddisco.cpython-39.pyc
+│       │   │   │       ├── menu_manutencao.cpython-39.pyc
+│       │   │   │       ├── mgrafcpu.cpython-39.pyc
+│       │   │   │       ├── mmemoreal.cpython-39.pyc
+│       │   │   │       ├── mmonitorix.cpython-39.pyc
+│       │   │   │       ├── mmonitrede.cpython-39.pyc
+│       │   │   │       ├── mmonitso.cpython-39.pyc
+│       │   │   │       ├── mtestegraf.cpython-39.pyc
+│       │   │   │       └── mteststress.cpython-39.pyc
+│       │   │   ├── menu_main.py
+│       │   │   ├── principal
+│       │   │   │   ├── marquivo.py
+│       │   │   │   ├── mcheat.py
+│       │   │   │   ├── mclima.py
+│       │   │   │   ├── mdjango.py
+│       │   │   │   ├── menu_principal.py
+│       │   │   │   ├── mevolucao.py
+│       │   │   │   ├── mprotela.py
+│       │   │   │   ├── mradio.py
+│       │   │   │   ├── msair.py
+│       │   │   │   ├── mservice.py
+│       │   │   │   ├── mzzz.py
+│       │   │   │   └── __pycache__
+│       │   │   │       ├── marquivo.cpython-39.pyc
+│       │   │   │       ├── mcheat.cpython-39.pyc
+│       │   │   │       ├── mclima.cpython-39.pyc
+│       │   │   │       ├── mdjango.cpython-39.pyc
+│       │   │   │       ├── menu_principal.cpython-39.pyc
+│       │   │   │       ├── mevolucao.cpython-39.pyc
+│       │   │   │       ├── mprotela.cpython-39.pyc
+│       │   │   │       ├── mradio.cpython-39.pyc
+│       │   │   │       ├── msair.cpython-39.pyc
+│       │   │   │       ├── mservice.cpython-39.pyc
+│       │   │   │       └── mzzz.cpython-39.pyc
+│       │   │   └── __pycache__
+│       │   │       └── menu_main.cpython-39.pyc
+│       │   ├── modelo_binario.py
+│       │   ├── modelo_clima.py
+│       │   ├── modelo.py
+│       │   ├── modelo_radio.py
+│       │   ├── modelo_renomear.py
+│       │   ├── modelo_texto.py
+│       │   ├── __pycache__
+│       │   │   ├── distancia.cpython-310.pyc
+│       │   │   ├── menucontatos.cpython-310.pyc
+│       │   │   ├── menufinanceiro.cpython-310.pyc
+│       │   │   ├── menuinstalacao.cpython-310.pyc
+│       │   │   ├── menulembretes.cpython-310.pyc
+│       │   │   ├── menumain.cpython-310.pyc
+│       │   │   ├── menumanutencao.cpython-310.pyc
+│       │   │   ├── menuprincipal.cpython-310.pyc
+│       │   │   ├── modelo_clima.cpython-310.pyc
+│       │   │   ├── modelo_clima.cpython-39.pyc
+│       │   │   ├── modelo.cpython-310.pyc
+│       │   │   ├── modelo.cpython-39.pyc
+│       │   │   ├── modelo_radio.cpython-310.pyc
+│       │   │   ├── modelo_radio.cpython-39.pyc
+│       │   │   ├── modelo_texto.cpython-310.pyc
+│       │   │   ├── modelo_texto.cpython-39.pyc
+│       │   │   ├── shcmd.cpython-310.pyc
+│       │   │   ├── shcmd.cpython-39.pyc
+│       │   │   ├── toolbarinit.cpython-310.pyc
+│       │   │   └── toolbarinit.cpython-39.pyc
+│       │   ├── radio.jpg
+│       │   ├── shcmd.py
+│       │   ├── toolbarinit.py
+│       │   └── zzfuncao.sh
+│       └── ui_settings.py
+├── database.db
+├── docs
+│   ├── comandos.txt
+│   ├── docs-git.txt
+│   ├── docs-poetry.txt
+│   ├── docs-pyenv.txt
+│   └── index.md
+├── LICENSE
+├── ls-a.txt
+├── Makefile
+├── mkdocs.yml
+├── poetry.lock
+├── poetry-show.txt
+├── pyproject.toml
+├── README.md
+├── tests
+│   ├── clock.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── test_pybob.cpython-310.pyc
+│   │   ├── test_pybob.cpython-310-pytest-7.1.3.pyc
+│   │   ├── test_pybob.cpython-39.pyc
+│   │   └── tests_pybob.cpython-310.pyc
+│   ├── test_pybob.py
+│   ├── tt1.py
+│   └── tt.py
+└── tree.txt
+
+26 directories, 192 files

@@ -17,6 +17,8 @@ Description:
 
 by: Elizeu de Santana  In: 20/10/2022
 """
+
+
 from .ui_model.toolbarinit import InitToolbar
 from .ui_model.menu.menu_main import MenuMain
 
@@ -25,10 +27,6 @@ class SettingsMain():
     def settings(self):
         '''Maximizar a Unidade de Interface.'''
         self.showMaximized()
-
-        '''Carrega image para o background.'''
-        # mg = os.path.join(CURRENT_DIR, "imagem/bg2.jpg")
-        # self.setCentralWidget(StackedWidget())
 
         '''Carrega o titulo na janela.'''
         self.setWindowTitle('PyBob - EliSoftWare®')
