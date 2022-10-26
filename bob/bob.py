@@ -46,19 +46,34 @@ History:
                 poetry remove pyside2
 
                 https://github.com/PySide/pyside2/wiki/Dependencies
+                instalar as dependências para buildins
 
                 conda install pyside2
+                poetry add pyside23
+                utilizando o vscode
+
+                . inumeras falhas e tentativas.
+                . Atual em 24/10/2022
+                considerando a capacidade de processamento do hardware em uso:
+                SO Ubuntu bionic, Gerenciador de janelas i3, workspace pycharm,
+                script python com pyside2 and shell sem curse, engendrando com
+                qutebrowser as Qt5 and zsh com ohmyzsh, monitorando com
+                monitorix e apache zbix
+
+
+
+
 
 
 Extern Dependency :
                 pyside2
 
 Intern Dependency:
-                mainwindow
+                MainWindow in ui_main
 
 Description:
-    Aplicação chamado apartir de agora pybob, programa de  dados  que
-    proporciona ao usuario uma experiência de configuração do ambiente
+    Aplicação chamada a partir de agora pybob, programa de  dados  que
+    proporciona ao usuário uma experiência de configuração do ambiente
     sistema operacional linux.
 
 by: Elizeu de Santana  In: 17/10/2022

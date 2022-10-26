@@ -22,30 +22,40 @@ Description:
 
 by: Elizeu de Santana  In: 17/10/2022
 """
-from PySide2.QtWidgets import QMainWindow, QMessageBox, QPlainTextEdit, QAction
+from typing import Union
+
+from PySide2.QtWidgets import (
+    QMainWindow,
+    QMessageBox,
+    QPlainTextEdit,
+    QAction
+)
 from PySide2.QtGui import QIcon
-from PySide2.QtCore import Slot
+from PySide2.QtCore import Slot, Qt
 from PySide2.QtWidgets import QLabel
 from PySide2.QtGui import QPixmap
 # from .ui_model.modelo_radio import Radio
 from .ui_settings import SettingsMain
 import sys
+# from os import path
 import os
 
 
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
-class UiMain(QMainWindow):
+class UiMain(QMainWindow): 
+    terAction: Union[QAction, QAction]
+
     def __init__(self, parent=None):
         QMainWindow.__init__(self, parent)
-        SettingsMain.settings(self)
+        SettingsMain.settings(self, QMainWindow)
 
         '''Carrega image para o background.'''
-        label = QLabel(self)
-        pixmap = QPixmap("bg2.jpg")
-        label.setPixmap(pixmap)
-        self.setCentralWidget(label)
+        # label = QLabel(self)
+        # pixmap = QPixmap("bg2.jpg")
+        # label.setPixmap(pixmap)
+        # self.setCentralWidget(label)
         # self.resize(pixmap.width(), pixmap.height())
         # mg = os.path.join(CURRENT_DIR, "imagem/bg2.jpg")
         # self.setCentralWidget(StackedWidget())
